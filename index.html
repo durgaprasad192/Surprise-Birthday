@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Birthday Surprise 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300&family=Dancing+Script&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: white;
+  }
+
+  .screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #38bdf8;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: none;
+  }
+
+  .card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+  }
+
+  .error {
+    color: #f87171;
+  }
+
+  /* 🌟 Start Page */
+  .start h1 {
+    font-size: 36px;
+    max-width: 400px;
+  }
+
+  /* 🎉 Final Page (Scrollable) */
+  .final {
+    background: #f8f8f8;
+    color: #333;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .final-box {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .final img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid gold;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    color: goldenrod;
+    margin-bottom: 15px;
+  }
+
+  .content {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .content p {
+    margin-bottom: 15px;
+  }
+
+  .footer {
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- 🌟 START PAGE -->
+<div class="screen start" id="startScreen">
+  <div>
+    <h1>This Page is Dedicated for My Madam Jiiii 💖💖💖</h1>
+    <button onclick="startApp()">Let's Start</button>
+  </div>
+</div>
+
+<!-- 🔐 Birthday -->
+<div class="screen hidden" id="screen1">
+  <div class="card">
+    <h2>🔒 Enter My Birthday</h2>
+    <input type="date" id="dateInput">
+    <button onclick="checkBirthday()">Next</button>
+    <div class="error" id="error1"></div>
+  </div>
+</div>
+
+<!-- 🔐 PIN -->
+<div class="screen hidden" id="screen2">
+  <div class="card">
+    <h2>🔐 Enter  My Phone Password</h2>
+    <input type="password" id="pinInput" placeholder="Enter PIN" inputmode="numeric">
+    <button onclick="checkPin()">Unlock</button>
+    <div class="error" id="error2"></div>
+  </div>
+</div>
+
+<!-- 🎉 FINAL PAGE -->
+<div class="final hidden" id="finalScreen">
+  <div class="final-box">
+
+    <img src="img.jpeg" alt="Brother">
+
+    <div class="title">Happy Birthday to My Madam Jiiiii 👧👧</div>
+    <div class="subtitle">To the One Who Has Always Been There</div>
+
+    <div class="content">
+      <p>
+       Once again Happy birthday too my madam Jiiiiii!!!💖💖💖I hope our bond never ends🫂🫂🫂. nuv ni life nuv anukunnavi anni sadistavani korukuntunna😊😊 inkaaaa..... 
+      </p>
+
+      <p>
+       when you get a problem dont worry just remember that there is a friend always for you i will be with you forever 
+
+      </p>
+
+      <p>
+         🤔🤔🤔 by the way, enjoy your day , ilane nuv chala happy ga undaliii 😘😘😘❤️❤️  inkaaaa....... i felt very happy while i am typing this msg for you!!! 
+
+      </p>
+
+      <p>
+        dont share this msg to anyone because it is only between me and my cutieeee madam jiii only 😍😍😊😊😊❤️
+
+
+      </p>
+
+      <p>
+        inkaaaa.....🤔🤔🤔 this is a special day for me i will never forget this day cuzz its my madam jiiii's birthday😍😍😍😊😊 
+
+
+      </p>
+
+      <p>
+        i hope you to enjoy this day as much as possible and not to be sad 
+
+inkaaaa...... em cheppali???? Em levu kani ee msg chadivaka veelu ayethai call chey ade naku ni birthday present anukooo sare naaaaaaaaa......
+
+i hope you enjoyed by reading this msg from me.........
+      </p>
+    </div>
+
+    <div class="footer">
+      With Love and Respect💖<br>
+      Your Sir Jiiii  !!!  👦👦
+    </div>
+
+  </div>
+</div>
+
+<script>
+function startApp() {
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("screen1").classList.remove("hidden");
+}
+
+function checkBirthday() {
+  if (document.getElementById("dateInput").value === "2010-02-17") {
+    document.getElementById("screen1").classList.add("hidden");
+    document.getElementById("screen2").classList.remove("hidden");
+  } else {
+    document.getElementById("error1").innerText = "❌ Wrong birthday!";
+  }
+}
+
+function checkPin() {
+  if (document.getElementById("pinInput").value === "1723") {
+    document.getElementById("screen2").classList.add("hidden");
+    document.getElementById("finalScreen").classList.remove("hidden");
+  } else {
+    document.getElementById("error2").innerText = "❌ Wrong PIN!";
+  }
+}
+</script>
+
+</body>
+</html> 
